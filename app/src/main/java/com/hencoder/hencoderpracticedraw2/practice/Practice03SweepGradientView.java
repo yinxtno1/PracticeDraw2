@@ -26,13 +26,14 @@ public class Practice03SweepGradientView extends View {
     {
         // 用 Paint.setShader(shader) 设置一个 SweepGradient
         // SweepGradient 的参数：圆心坐标：(300, 300)；颜色：#E91E63 到 #2196F3
+        SweepGradient sg = new SweepGradient(300, 300, 0xffE91E63, 0xff2196F3);
+        paint.setShader(sg);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        SweepGradient sg = new SweepGradient(300, 300, 0xffE91E63, 0xff2196F3);
-        paint.setShader(sg);
+
         canvas.drawCircle(300, 300, 200, paint);
     }
 }

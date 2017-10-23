@@ -29,14 +29,15 @@ public class Practice02RadialGradientView extends View {
     {
         // 用 Paint.setShader(shader) 设置一个 RadialGradient
         // RadialGradient 的参数：圆心坐标：(300, 300)；半径：200；颜色：#E91E63 到 #2196F3
+        RadialGradient rg = new RadialGradient(300, 300, 200, 0xffE91E63, 0xff2196F3, Shader.TileMode.CLAMP);
+        paint.setShader(rg);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        RadialGradient rg = new RadialGradient(300, 300, 200, 0xffE91E63, 0xff2196F3, Shader.TileMode.CLAMP);
-        paint.setShader(rg);
+
         canvas.drawCircle(300, 300, 200, paint);
     }
 }
